@@ -1,0 +1,37 @@
+﻿@model TimeLogger.Models.WorklogViewModel
+
+<table>
+    <thead>
+        <tr>
+            <th>REF</th>
+            <th>Author</th>
+            <th>Project</th>
+            <th>Issue</th>
+            <th>Issue Summary</th>
+            <th>Qualification</th>
+            <th>Time Spent</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var worklog in Model.Worklogs)
+        {
+            <tr>
+                <td>@worklog.REF</td>
+                <td>@worklog.AUTHOR</td>
+                <td>@worklog.PROJECT</td>
+                <td>@worklog.ISSUE</td>
+                <td>@worklog.ISSUESUMMARY</td>
+                <td>@worklog.QUALIFICATION</td>
+                <td>@worklog.TIMESPENT.ToString("0.00")</td>
+                <td>@worklog.DESCRIPT</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Ukryte pola do wykresu -->
+<input type="hidden" id="ProductiveHours" value="@Model.ProductiveHours.ToString("0.00")" />
+<input type="hidden" id="HelpDeskHours" value="@Model.HelpDeskHours.ToString("0.00")" />
+<input type="hidden" id="DevelopmentHours" value="@Model.DevelopmentHours.ToString("0.00")" />
+<input type="hidden" id="InternalHours" value="@Model.InternalHours.ToString("0.00")" />
