@@ -83,8 +83,8 @@ namespace TimeLogger.Controllers
 
             ViewData["StartDate"] = startDate;
             ViewData["EndDate"] = endDate;
-            ViewData["Username"] = username; // Ustawienie imienia użytkownika w ViewData
-            ViewData["PROJECT"] = project;         // Ustawienie zespołu w ViewData
+            ViewData["Username"] = username;
+            ViewData["PROJECT"] = project; 
 
             return View(model);
         }
